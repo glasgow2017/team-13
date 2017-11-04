@@ -75,8 +75,12 @@ class Request(models.Model):
     weight = models.IntegerField(blank=False, default=1)
     location_lat = models.DecimalField(max_digits=9, decimal_places=6)
     location_long = models.DecimalField(max_digits=9, decimal_places=6)
-    request_user = models.ForeignKey(UserProfile, on_delete=models.CASCADE(), on_update=models.CASCADE())
-    responder = models.ManyToManyField(UserProfile, on_delete=models.CASCADE(), on_update=models.CASCADE(), blank=True, null=True)
+    request_user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, on_update=models.CASCADE)
+    responder = models.ManyToManyField(UserProfile, on_delete=models.CASCADE, on_update=models.CASCADE, blank=True, null=True)
+
+    def __str__(self):
+        return self.request_user.name + str(self.id)
+
 
 class Call(models.Model):
     usr_rating = models.IntegerField(blank=True, null=True)
@@ -86,4 +90,7 @@ class Call(models.Model):
     duration = models.DurationField(blank=False)
     resolved = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=timezone.now)
-    request = models.OneToOneField(Request, on_delete=models.CASCADE(), on_update=models.CASCADE())
+    request = models.OneToOneField(Request, on_delete=models.CASCADE, on_update=models.CASCADE)
+
+    def __str__(self):
+        return self.id
