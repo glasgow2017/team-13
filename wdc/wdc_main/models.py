@@ -3,11 +3,12 @@ import math
 from django.db import models
 from django.utils import timezone
 
+
 class UserProfile(models.Model):
-    ENGLAND_CHOICE = 1
-    SCOTLAND_CHOICE = 2
-    WALES_CHOICE = 3
-    NI_CHOICE = 4
+    ENGLAND_CHOICE = 0
+    SCOTLAND_CHOICE = 1
+    WALES_CHOICE = 2
+    NI_CHOICE = 3
 
     REGION_CHOICES = (
         (ENGLAND_CHOICE, "England"),
@@ -16,10 +17,10 @@ class UserProfile(models.Model):
         (NI_CHOICE, "Northern Ireland")
     )
 
-    FEMALE_CHOICE = 1
-    MALE_CHOICE = 2
-    OTHER_CHOICE = 3
-    NOT_DISCLOSED_CHOICE = 4
+    FEMALE_CHOICE = 0
+    MALE_CHOICE = 1
+    OTHER_CHOICE = 2
+    NOT_DISCLOSED_CHOICE = 3
 
     GENDER_CHOICES = (
         (FEMALE_CHOICE, "Female"),
@@ -28,12 +29,12 @@ class UserProfile(models.Model):
         (NOT_DISCLOSED_CHOICE, "Not Disclosed")
     )
 
-    MILITARY_CHOICE = 1
-    POLICE_CHOICE = 2
-    FIRE_CHOICE = 3
-    PRISON_CHOICE = 4
-    NHS_CHOICE = 5
-    OTHER_CHOICE = 6
+    MILITARY_CHOICE = 0
+    POLICE_CHOICE = 1
+    FIRE_CHOICE = 2
+    PRISON_CHOICE = 3
+    NHS_CHOICE = 4
+    OTHER_CHOICE = 5
 
     BACKGROUND_CHOICES = (
         (MILITARY_CHOICE, "Military"),
@@ -60,10 +61,10 @@ class UserProfile(models.Model):
 
 
 class Request(models.Model):
-    EMERGENCY_CHOICE = 1
-    HOUSING_CHOICE = 2
-    JOB_CHOICE = 3
-    LONELINESS_CHOICE = 4
+    EMERGENCY_CHOICE = 0
+    HOUSING_CHOICE = 1
+    JOB_CHOICE = 2
+    LONELINESS_CHOICE = 3
 
     CATEGORY_CHOICES = (
         (EMERGENCY_CHOICE, 'Emergency'),
@@ -71,6 +72,8 @@ class Request(models.Model):
         (JOB_CHOICE, 'Job'),
         (LONELINESS_CHOICE, 'Loneliness')
     )
+
+    CATEGORY_WEIGHTS = (500, 3, 2, 5)
 
     timestamp = models.DateTimeField(auto_now_add=timezone.now)
     category = models.IntegerField(choices=CATEGORY_CHOICES, blank=False)
@@ -84,14 +87,14 @@ class Request(models.Model):
         return self.request_user.name + str(self.id)
 
     def set_weight(self):
-        category_weight = 500
-
-        if self.category == self.HOUSING_CHOICE:
-            category_weight = 3
-        elif self.category == self.JOB_CHOICE:
-            category_weight = 2
-        elif self.category == self.LONELINESS_CHOICE:
-            category_weight = 5
+        """
+        Calculates and saves the current weight of the request.
+        This weight is the sum of:
+        1.) The predefined weight corresponding to the category of the request.
+        2.) A large value if the user requesting help has previous mental health issues
+        3.) An exponentially growing value corresponding to the length this request has spent in the queue.
+        """
+        category_weight = self.CATEGORY_WEIGHTS[self.category]
 
         previous_issue_weight = 100 if self.request_user.previous_issues else 0
 
