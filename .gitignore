@@ -177,3 +177,4 @@ venv.bak/
 .mypy_cache/
 
 # End of https://www.gitignore.io/api/python,django,pycharm
+wdc/wdc_main/migrations/0*.py
