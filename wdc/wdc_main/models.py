@@ -1,7 +1,10 @@
 import math
 
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
@@ -45,6 +48,7 @@ class UserProfile(models.Model):
         (OTHER_CHOICE, "Other Background")
     )
 
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255, blank=False)
     telephone = models.CharField(max_length=20, blank=False)
     region = models.IntegerField(choices=REGION_CHOICES, blank=False)
@@ -58,6 +62,15 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.name
+
+    @receiver(post_save, sender=User)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            UserProfile.objects.create(user=instance)
+
+    @receiver(post_save, sender=User)
+    def save_user_profile(sender, instance, **kwargs):
+        instance.profile.save()
 
 
 class Request(models.Model):
