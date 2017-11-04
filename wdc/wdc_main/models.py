@@ -45,7 +45,7 @@ class UserProfile(models.Model):
     name = models.CharField(max_length=255, blank=False)
     telephone = models.CharField(max_length=20, blank=False)
     region = models.IntegerField(choices=REGION_CHOICES, blank=False)
-    comments = models.CharField(max_length=1000, blank=True)
+    comments = models.CharField(max_length=1000, blank=True, null=True)
     dob = models.DateField(blank=False)
     gender = models.IntegerField(GENDER_CHOICES, blank=False)
     background = models.IntegerField(BACKGROUND_CHOICES, blank=False)
@@ -55,3 +55,26 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Request(models.Model):
+    EMERGENCY_CHOICE = 1
+    HOUSING_CHOICE = 2
+    JOB_CHOICE = 3
+    LONELINESS_CHOICE = 4
+
+    CATEGORY_CHOICES = (
+        (EMERGENCY_CHOICE, 'Emergency')
+        (HOUSING_CHOICE, 'Housing')
+        (JOB_CHOICE, 'Job')
+        (LONELINESS_CHOICE, 'Loneliness')
+    )
+
+    timestamp = models.DateTimeField(auto_now_add=timezone.now)
+    category = models.IntegerField(choices=CATEGORY_CHOICES, blank=False)
+    weight = models.IntegerField(blank=False, default=1)
+    location_lat = models.DecimalField(max_digits=9, decimal_places=6)
+    location_long = models.DecimalField(max_digits=9, decimal_places=6)
+    request_user = models.ForeignKey(UserProfile, on_delete=models.Cascade, on_update=models.Cascade)
+    responder = models.ManyToManyField(UserProfile, on_delete=models.Cascade, on_update=models.Cascade, blank=True, null=True)
+
