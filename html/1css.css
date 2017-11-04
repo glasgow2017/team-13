@@ -1,0 +1,120 @@
+ * { margin: 0; 
+	padding: 0; /*to avoid a gap in Firefox*/ }  
+body { background-color: white /*url("pictures/wallpaper.png")*/ ;
+		background-attachment: fixed;
+		padding: 0px; 
+		text-align: center; /* First step to make the content centred in IE */
+		font-family: 'Century Gothic';
+		color: white;
+		font-size: 11pt;
+		}  
+#wrapper {	margin: auto;
+			width: auto;
+			height: auto; 
+			text-align: left; /* Second step to make the content centred in IE */
+			float: left;
+			}  
+#topnavigation { margin-top: 0px; 
+				margin-left: 0px; 
+				margin-right: 0px; 
+				margin-bottom: 0px;
+				bottom: 0;
+				float: left; 
+				width: 100%;  /*black line*/ 
+				height: 50px; 
+				display: block;
+				background-color: blue;
+				opacity: 0.7;
+				text-align: center;
+				position: fixed;
+}   
+#topnavigation ul { list-style-type: none; 
+					font: 20px 'Century Gothic' ; 
+					padding-top: 20px; 
+					padding-bottom: 20px; 
+					padding-left: 20px;
+					padding-right: 20px; }  
+#topnavigation li { display: inline;
+					padding-left: 20px;
+					padding-right: 20px;
+}
+#topnavigation a:link, #topnavigation a:visited {
+			text-decoration: none; 
+			text-transform: uppercase; 
+			font-weight: bold; 
+			background-color: none; 
+			color: white; }
+#topnavigation a:hover {
+	text-decoration: underline;
+	background-color: #FFB3B3;
+	color: black;
+}
+#content {
+	margin-top: 25px;
+	margin-right: 80px;
+	margin-bottom: 25px;
+	margin-left: 80px;
+	border: 4px solid black;
+}
+
+.mainheading {
+	font-size:48pt;
+	text-align: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+#bottom { /*like a bottom navigation bar*/
+	width: 100%;
+	bottom: 0;
+	height: 50px;
+	color: black;
+	background-color: white;
+	opacity: 0.3;
+	position: static;
+	text-align: center;
+	font-size: 10pt;
+}
+hr.style-seven {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 12px 0 0 0;
+    border-radius: 20px;
+}
+p {
+	margin: 40px;
+	text-align: left;
+}
+#margin {
+	margin-left: 85px;
+	}
+h2 a { /*for subjects*/
+	margin:20px;
+	color: #FFB3B3;
+}
+.img {
+	margin: 10px;
+	width: 100px;
+}
+.location {
+	text-align: right
+}
+.location2{
+	margin-left:30px;
+}
+.location3 {
+text-align:center;
+}
+.border {
+	padding: 10px;
+	border-style: dotted;
+	border-width: 2px;
+}
+.links {
+	list-style-type: none;
+	text-align:center;
+	padding:20px;
+}
+.margin {
+	margin: 25px;/*images*/
+}
