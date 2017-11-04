@@ -78,3 +78,12 @@ class Request(models.Model):
     request_user = models.ForeignKey(UserProfile, on_delete=models.CASCADE(), on_update=models.CASCADE())
     responder = models.ManyToManyField(UserProfile, on_delete=models.CASCADE(), on_update=models.CASCADE(), blank=True, null=True)
 
+class Call(models.Model):
+    usr_rating = models.IntegerField(blank=True, null=True)
+    responder_rating = models.IntegerField(blank=True, null=True)
+    usr_comment = models.CharField(max_length=500, blank=True, null=True)
+    responder_comment = models.CharField(max_length=500, blank=True, null=True)
+    duration = models.DurationField(blank=False)
+    resolved = models.BooleanField(default=False)
+    timestamp = models.DateTimeField(auto_now_add=timezone.now)
+    request = models.OneToOneField(Request, on_delete=models.CASCADE(), on_update=models.CASCADE())
