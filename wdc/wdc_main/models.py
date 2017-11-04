@@ -64,9 +64,9 @@ class Request(models.Model):
     LONELINESS_CHOICE = 4
 
     CATEGORY_CHOICES = (
-        (EMERGENCY_CHOICE, 'Emergency')
-        (HOUSING_CHOICE, 'Housing')
-        (JOB_CHOICE, 'Job')
+        (EMERGENCY_CHOICE, 'Emergency'),
+        (HOUSING_CHOICE, 'Housing'),
+        (JOB_CHOICE, 'Job'),
         (LONELINESS_CHOICE, 'Loneliness')
     )
 
@@ -75,6 +75,6 @@ class Request(models.Model):
     weight = models.IntegerField(blank=False, default=1)
     location_lat = models.DecimalField(max_digits=9, decimal_places=6)
     location_long = models.DecimalField(max_digits=9, decimal_places=6)
-    request_user = models.ForeignKey(UserProfile, on_delete=models.Cascade, on_update=models.Cascade)
-    responder = models.ManyToManyField(UserProfile, on_delete=models.Cascade, on_update=models.Cascade, blank=True, null=True)
+    request_user = models.ForeignKey(UserProfile, on_delete=models.CASCADE(), on_update=models.CASCADE())
+    responder = models.ManyToManyField(UserProfile, on_delete=models.CASCADE(), on_update=models.CASCADE(), blank=True, null=True)
 
