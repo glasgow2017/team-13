@@ -82,6 +82,7 @@ class Request(models.Model):
     location_long = models.DecimalField(max_digits=9, decimal_places=6)
     request_user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, on_update=models.CASCADE)
     responder = models.ManyToManyField(UserProfile, on_delete=models.CASCADE, on_update=models.CASCADE, blank=True, null=True)
+    is_taken = models.BooleanField(default=False)
 
     def __str__(self):
         return self.request_user.name + str(self.id)
@@ -100,6 +101,7 @@ class Request(models.Model):
 
         time_weight = math.exp((timezone.now() - self.timestamp).min)
 
+        # Update the current weight
         self.weight = category_weight + previous_issue_weight + time_weight
         self.save()
 
