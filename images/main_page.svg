@@ -206,19 +206,27 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Footlight MT Light';-inkscape-font-specification:'Footlight MT Light, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.30000019;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="114.39062"
-       y="947.30634"
+       x="111.49297"
+       y="878.54535"
        id="text6601"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6603"
-         x="114.39062"
-         y="947.30634"
+         x="111.49297"
+         y="878.54535"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56.25px;font-family:Arial;-inkscape-font-specification:Arial;fill:#1a0c0c;fill-opacity:1;stroke:#1c2a2b;stroke-width:4.30000019;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">EMERGENCY HELP</tspan></text>
     <path
        style="fill:#164450;fill-opacity:1;fill-rule:evenodd;stroke:#164450;stroke-width:2.21799994;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 574.74525,668.81228 c 20.53337,0 41.06672,0 61.60009,0"
        id="path6849"
        inkscape:connector-curvature="0" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#263336;stroke-width:4.03448248;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6508-2-9"
+       width="591.78198"
+       height="63.320808"
+       x="78.875603"
+       y="826.7525"
+       ry="15.17222" />
   </g>
 </svg>
