@@ -4,26 +4,98 @@
 		<meta charset="utf-8">
 		<title>Log In</title>
 		<!-- link rel="stylesheet" media="screen" href="styles.css"> -->
+		<style>
+			body{
+				font-family:"Arial";
+			}
+			/*header*/
+			div.container {
+    		width: 100%;
+    		max-height: 100%;
+			}
+			header, footer {
+    		background-color: #0f2b33;
+    		clear: left;
+    		text-align: center;
+			}
+			/*button style*/
+			#button {
+			background-color: #0f2b33;
+			border: none;
+			color: white;
+			padding: 6px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 24px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 5px;
+			}
+			#button2 {
+			background-color: white;
+			border: solid #0f2b33;
+			color: #0f2b33 ;
+			padding: 6px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 24px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 5px;
+			}
+			.textbox {
+			border: 2px solid #0f2b33;
+			background-color:#0f2b33;
+			color: white; 
+			height: 24px;
+  			border-radius: 5px;
+  			}
+  			::-webkit-input-placeholder { /* Chrome */
+  			color: white;
+  			}
+			::-ms-input-placeholder { /* IE 10+ */
+  			color: white;
+			}
+			::-moz-placeholder { /* Firefox 19+ */
+			color: white;
+  			opacity: 1;
+			}
+			:-moz-placeholder { /* Firefox 4 - 18 */
+  			color: white;
+  			opacity: 1;
+			}	
+		</style>
 	</head>
 	<body>
-		<center><img src="https://www.totalgiving.co.uk/dm-images/charity-logos/large/who-dares-cares-scio-4.jpg"></center>
+		<div class="container">
+		<header>
+   			<img src="logo_site.png">
+		</header>
+		<!--<center><img src="https://www.totalgiving.co.uk/dm-images/charity-logos/large/who-dares-cares-scio-4.jpg"></center>-->
 		<!-- start form for login -->
+		<br>
 		<form action="" method="POST">
 			<!-- collection of form associated elements goes here -->
 			<center><table>
   			<tr>
-    			<td><input id="email" type="email" name="email" value="" size="40" maxlength="60" placeholder="Email Address"/>
+    			<td><input class="textbox" id="email" type="email" name="email" value="" size="50" maxlength="60" placeholder="Email Address"/>
 				</td>
   			</tr>
+  				<br>
   			<tr>
-    			<td><input id="password" type="text" name="password" value="" size="40" maxlength="40" placeholder="Password"/>
+  			</tr>
+  			<tr>
+    			<td><input class="textbox" id="password" type="text" name="password" value="" size="50" maxlength="40" placeholder="Password"/>
 				</td>
   			</tr>	
 		</table></center>
-		<center><button type="submit">Log In</button></center>
+		<br>
+		<center><button id="button" type="submit">Log In</button></center>
 		</form>
 		<!-- end of user ID login fields -->
 		<center><p>Don't have an account? Register <a href="register.html">here</a></p></center>
-		<center><button type="button">Emergency Help</button></center>
+		<center><button id="button2" type="button"><b>EMERGENCY HELP</b></button></center>
 	</body>
 </html>
