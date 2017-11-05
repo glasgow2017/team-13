@@ -10,8 +10,8 @@ from wdc_main.models import Request, Call, UserProfile
 
 
 def create_users():
-    admin = User(username='admin')
-    admin.set_password('admin')
+    admin = User(username='Admin')
+    admin.set_password('Admin')
     admin.is_superuser = True
     admin.is_staff = True
     admin.save()

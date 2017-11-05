@@ -40,5 +40,5 @@ def get_most_urgent_request(user):
 
 def responder_page(request):
     priority_user = get_most_urgent_request(request.user)
-    return HttpResponse(priority_user, )
+    return render(request, "responder_page.html", {"user": priority_user})
 
