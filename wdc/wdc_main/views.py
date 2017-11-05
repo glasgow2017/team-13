@@ -26,15 +26,19 @@ def profile(request):
     return render(request, "profile.html", {})
 
 
-def get_most_urgent_request():
-    priority_list = Request.objects.filter(is_taken=False).order_by('-weight')
-    if priority_list:
-        return priority_list[0]
-    # Return false if there are no outstanding requests
-    return False
+def get_most_urgent_request(user):
+    user = UserProfile.objects.get(id=user.id)
+    if user.role==2:
+        priority_list = Request.objects.filter(is_taken=False).order_by('-weight')
+        if priority_list:
+            return priority_list[0]
+        # Return false if there are no outstanding requests
+        return False
+    else:
+        return HttpResponse('You are not a responder.')
 
 
 def responder_page(request):
-    priority_user = get_most_urgent_request()
+    priority_user = get_most_urgent_request(request.user)
     return HttpResponse(priority_user, )
 
