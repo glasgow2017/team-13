@@ -1,0 +1,10 @@
+* { margin: 0; 
+	padding: 0; /*to avoid a gap in Firefox*/ }  
+body { background-color: white /*url("pictures/wallpaper.png")*/ ;
+		background-attachment: fixed;
+		padding: 0px; 
+		text-align: center; /* First step to make the content centred in IE */
+		font-family: 'Century Gothic';
+		color: white;
+		font-size: 11pt;
+		}  
