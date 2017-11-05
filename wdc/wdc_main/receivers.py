@@ -10,3 +10,4 @@ def update_weights(sender, **kwargs):
     """
     for request in Request.objects.filter(is_taken=False):
         request.set_weight()
+        request.save()

@@ -1,13 +1,21 @@
 import math
 
 from django.db import models
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 from django.utils import timezone
 from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
+    ADMIN_CHOICE = 1
+    RESPONDER_CHOICE = 2
+    USER_CHOICE = 3
+
+    ROLE_CHOICES = (
+        (ADMIN_CHOICE, "Admin"),
+        (RESPONDER_CHOICE, "Responder"),
+        (USER_CHOICE, "User")
+    )
+
     ENGLAND_CHOICE = 0
     SCOTLAND_CHOICE = 1
     WALES_CHOICE = 2
@@ -49,28 +57,20 @@ class UserProfile(models.Model):
     )
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255, blank=False)
+    role = models.IntegerField(choices=ROLE_CHOICES, default=USER_CHOICE)
+    name = models.CharField(max_length=255)
     telephone = models.CharField(max_length=20, blank=False)
     region = models.IntegerField(choices=REGION_CHOICES, blank=False)
     comments = models.CharField(max_length=1000, blank=True, null=True)
     dob = models.DateField(blank=False)
-    gender = models.IntegerField(GENDER_CHOICES, blank=False)
-    background = models.IntegerField(BACKGROUND_CHOICES, blank=False)
+    gender = models.IntegerField(choices=GENDER_CHOICES, blank=False)
+    background = models.IntegerField(choices=BACKGROUND_CHOICES, blank=False)
     previous_issues = models.BooleanField(default=False)
     blocked = models.BooleanField(default=False)
     registered_on = models.DateTimeField(auto_now_add=timezone.now)
 
     def __str__(self):
         return self.name
-
-    @receiver(post_save, sender=User)
-    def create_user_profile(sender, instance, created, **kwargs):
-        if created:
-            UserProfile.objects.create(user=instance)
-
-    @receiver(post_save, sender=User)
-    def save_user_profile(sender, instance, **kwargs):
-        instance.profile.save()
 
 
 class Request(models.Model):
@@ -112,11 +112,14 @@ class Request(models.Model):
 
         previous_issue_weight = 100 if self.request_user.previous_issues else 0
 
-        time_weight = math.exp((timezone.now() - self.timestamp).min)
+        time_weight = math.exp((timezone.now() - self.timestamp).total_seconds() / 1000)
 
-        # Update the current weight
         self.weight = category_weight + previous_issue_weight + time_weight
-        self.save()
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        self.set_weight()
+        super(Request, self).save(force_insert, force_update, using, update_fields)
 
 
 class Call(models.Model):
