@@ -1,44 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% block meta %}
-    <style>
-        body {
-            margin: 0;
-        }
-
-        .icon-bar {
-            width: 100%;
-            background-color: #0C1315;
-            position: fixed;
-            bottom: 0;
-        }
-
-        .icon-bar a {
-            float: left;
-            width: 25%;
-            text-align: center;
-            padding: 12px 0;
-            transition: all 0.3s ease;
-            color: #C1D3D8;
-            font-size: 20px;
-            bottom: 0;
-        }
-
-        .icon-bar a:hover {
-            background-color: #007a99 /*#000*/;
-        }
-
-        a:active {
-            background-color: red;
-        }
-
-        .buttonprop {
-            height: 70px;
-            width: 100px;
-            font-size: 46px;
-        }
-    </style>
-{% endblock %}
 {% block content %}
     <!--<center><img src="https://www.totalgiving.co.uk/dm-images/charity-logos/large/who-dares-cares-scio-4.jpg"></center>-->
     <!-- start form for login -->
@@ -97,12 +58,4 @@
             <button class="buttonprop" id="button2" type="button"><b>TEXT</b></button>
         </div>
     </div>
-
-    <div class="icon-bar">
-        <a href="/"><i class="fa fa-home"></i></a>
-        <a href="#"><i class="fa fa-book"></i></a>
-        <a href="#"><i class="fa fa-globe"></i></a>
-        <a href="/profile"><i class="fa fa-user"></i></a>
-    </div>
 {% endblock %}
-{% block footer %}{% endblock %}
