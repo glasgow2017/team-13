@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^profile/$', views.profile, name="profile"),
     url(r'^responder_page', views.responder_page, name="responder_page"),
-    url(r'^$', LoginView.as_view(template_name="login.html"), name="login"),
+    url(r'^$', LoginView.as_view(template_name="index.html"), name="login"),
 ]

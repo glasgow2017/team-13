@@ -6,8 +6,7 @@
     <br><br>
 
     {% if user.is_authenticated %}
-        Welcome {{ user.username }}<br>
-        <a class="btn btn-light" type="button" href="/logout/"><i class="fa fa-sign-out">&nbsp;&nbsp;</i>Log Out</a>
+        Welcome {{ user.username }}&nbsp;;&nbsp;<a type="button" href="/logout/">Log Out</a>
     {% else %}
         <div class="row">
             {% if form.errors %}
