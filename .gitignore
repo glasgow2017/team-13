@@ -178,3 +178,4 @@ venv.bak/
 
 # End of https://www.gitignore.io/api/python,django,pycharm
 wdc/wdc_main/migrations/0*.py
+ios_app/Who Dares Cares/Who Dares Cares.xcodeproj/xcuserdata
