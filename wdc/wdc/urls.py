@@ -16,16 +16,17 @@ Including another URLconf
 
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 
 from wdc_main import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url('^', include('django.contrib.auth.urls')),
     url(r'^login/$', LoginView.as_view(template_name="login.html"), name="login"),
+    url(r'^logout/$', LogoutView.as_view(), name="logout"),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'^accounts/profile/$', views.profile, name="profile"),
+    url(r'^profile/$', views.profile, name="profile"),
+    url(r'^home/$', views.home, name="home"),
     url(r'^$', views.index, name="index"),
     url(r'^responder_page', views.responder_page, name="responder_page")
 ]

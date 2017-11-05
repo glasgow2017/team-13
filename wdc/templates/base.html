@@ -13,10 +13,16 @@
     <!-- Bootstrap core CSS -->
     <link href="{% static "bootstrap.min.css" %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static "font-awesome.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "sheet1.css" %}">
 </head>
 
 <body>
-<div class="row" style="margin: 0;">
+<div class="row" style="margin:0;">
+    <header>
+        <div class="col-12">
+            <img src="{% static "logo_site.png" %}" class="img img-fluid">
+        </div>
+    </header>
     <div class="container col-12">
         {% block content %}{% endblock %}
     </div>
