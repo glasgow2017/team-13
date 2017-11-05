@@ -22,6 +22,8 @@ from wdc_main import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^about/$', views.about, name="about"),
+    url(r'^links/$', views.links, name="links"),
     url(r'^logout/$', LogoutView.as_view(), name="logout"),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^profile/$', views.profile, name="profile"),

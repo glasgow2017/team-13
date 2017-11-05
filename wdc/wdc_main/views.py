@@ -42,3 +42,10 @@ def responder_page(request):
     priority_user = get_most_urgent_request(request.user)
     return render(request, "responder_page.html", {"user": priority_user})
 
+
+def about(request):
+    return render(request, "about.html", {})
+
+
+def links(request):
+    return render(request, "links.html", {})

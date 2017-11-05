@@ -7,6 +7,7 @@
 
     {% if user.is_authenticated %}
         Welcome {{ user.username }}&nbsp;;&nbsp;<a type="button" href="/logout/">Log Out</a>
+        <br><br>
     {% else %}
         <div class="row">
             {% if form.errors %}
@@ -32,7 +33,6 @@
                                placeholder="Password" name="{{ form.password.name }}">
                     </div>
                 </div>
-                <br>
                 <center>
                     <button id="button" class="btn btn-primary" type="submit">Log In</button>
                 </center>
@@ -41,13 +41,13 @@
         <!-- end of user ID login fields -->
         <center><p>Don't have an account? Register <a href="/accounts/register">here</a></p></center>
     {% endif %}
-    <br><br>
+
     <center>
         <a id="button2" type="button" href="tel:07780666056"><i class="fa fa-phone">&nbsp;&nbsp;</i><b>EMERGENCY
             HELP</b></a>
     </center>
 
-    <br><br>
+    <br>
     <div class="row">
         <div class="col-4 offset-1">
             <button class="buttonprop" id="button2" type="button"><b>CALL</b></button>
