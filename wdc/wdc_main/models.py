@@ -114,7 +114,9 @@ class Request(models.Model):
 
         previous_issue_weight = 100 if self.request_user.previous_issues else 0
 
-        time_weight = math.exp((timezone.now() - self.timestamp).total_seconds() / 1000)
+        time_weight = 0
+        if (self.timestamp):
+            time_weight = math.exp((timezone.now() - self.timestamp).total_seconds() / 1000)
 
         self.weight = category_weight + previous_issue_weight + time_weight
 

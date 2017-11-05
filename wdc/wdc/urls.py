@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/profile/$', views.profile, name="profile"),
     url(r'^$', views.index, name="index"),
+    url(r'^responder_page', views.responder_page, name="responder_page")
 ]
