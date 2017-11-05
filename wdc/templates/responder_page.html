@@ -2,8 +2,18 @@
 {% load static %}
 {% block content %}
 
-    <div class="row">
-        {{ user }} needs help!
+    <div class="col">
+        {% if p_user %}
+            <p1>{{ p_user }} needs help!</p1><br>
+            <p1>{{ background }} background</p1><br>
+            {% if p_user.previous_issues %}
+                <p1>Has known mental health issues</p1>
+            {% else %}
+                <p1>No known mental health issues</p1>
+            {% endif %}
+        {% else %}
+            <p1>Nobody requires assistance at this time.</p1>
+        {% endif %}
     </div>
 
 {% endblock %}

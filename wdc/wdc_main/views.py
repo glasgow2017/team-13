@@ -1,7 +1,8 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.db.models import ObjectDoesNotExist
+from django.contrib.auth.views import login
 from .forms import ProfileForm
-from .models import UserProfile, Request
+from .models import UserProfile, Request, User
 
 
 def profile(request):
@@ -26,8 +27,10 @@ def profile(request):
     return render(request, "profile.html", {})
 
 
-def get_most_urgent_request(user):
-    user = UserProfile.objects.get(id=user.id)
+def get_most_urgent_request(r_user):
+    if r_user.is_authenticated() == False:
+        return("NOT_LOGGED_IN")
+    user = UserProfile.objects.get(id=r_user.id)
     if user.role==2:
         priority_list = Request.objects.filter(is_taken=False).order_by('-weight')
         if priority_list:
@@ -35,12 +38,17 @@ def get_most_urgent_request(user):
         # Return false if there are no outstanding requests
         return False
     else:
-        return HttpResponse('You are not a responder.')
+        return redirect('/accounts/login')
 
 
 def responder_page(request):
-    priority_user = get_most_urgent_request(request.user)
-    return render(request, "responder_page.html", {"user": priority_user})
+    priority_req = get_most_urgent_request(request.user)
+    if (priority_req == "NOT_LOGGED_IN"):
+        return redirect('/accounts/login')
+    if (priority_req):
+        priority_user = priority_req.request_user
+        return render(request, "responder_page.html", {"p_user": priority_user, "background": priority_user.get_background_display()})
+    return render(request, "responder_page.html", {})
 
 
 def about(request):

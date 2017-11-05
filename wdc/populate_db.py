@@ -15,6 +15,9 @@ def create_users():
     admin.is_superuser = True
     admin.is_staff = True
     admin.save()
+    admin_profile = UserProfile(name='Admin', role=2)
+    admin_profile.user = admin
+    admin_profile.save()
 
 if __name__ == '__main__':
     print("Creating users...")
