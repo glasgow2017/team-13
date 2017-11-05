@@ -1,11 +1,61 @@
-{% if user.is_authenticated %}
-    Hello, please fill this form:
+{% extends "base.html" %}
+{% block content %}
+    <center><h2>Profile</h2></center>
+    <!-- form for profile creation-->
+    <form action="/accounts/profile/" method="POST">
+        {% csrf_token %}
 
-    <form method="post" action="/accounts/profile/">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" name="Submit" value="Update profile">
+        {% if user.is_authenticated %}
+            <div class="form-group row">
+                <label for="{{ form.name.id_for_label }}"
+                       class="col-sm-2 col-form-label">{{ form.name.label }}</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="{{ form.name.id_for_label }}"
+                           placeholder="Name" name="{{ form.name.name }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="{{ form.age.id_for_label }}"
+                       class="col-sm-2 col-form-label">{{ form.age.label }}</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="{{ form.age.id_for_label }}"
+                           name="{{ form.age.name }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.gender.id_for_label }}">{{ form.gender.label }}</label>
+                {{ form.gender }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.region.id_for_label }}">Region</label>
+                {{ form.region }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.background.id_for_label }}">Background</label>
+                {{ form.background }}
+            </div>
+            <div class="form-check">
+                <label for="{{ form.previous_issues.id_for_label }}">Have you ever been diagnosed with a mental health
+                    issue?</label>
+                {{ form.previous_issues|yesno:"Yes,No" }}
+            </div>
+
+            <br>
+            {% if user.name == "" %}
+                <input type="submit" name="Submit" value="Update profile">
+            {% else %}
+                <div class="row">
+                    <div class="col-2 offset-1">
+                        <button id="button2" href="login.html" type="button">Back</button>
+                    </div>
+                    <div class="col-3 offset-3">
+                        <button id="button2" type="submit">Submit</button>
+                    </div>
+                </div>
+                <br>
+            {% endif %}
+        {% else %}
+            Please log in or register first.
+        {% endif %}
     </form>
-{% else %}
-    Register or log in first
-{% endif %}
+{% endblock %}
