@@ -3,20 +3,23 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Profile</title>
-		<!-- link rel="stylesheet" media="screen" href="styles.css"> -->
+		<link rel="stylesheet" type="text/css" href="sheet1.css">
 	</head>
 	<body>
-		<center><img src="https://www.totalgiving.co.uk/dm-images/charity-logos/large/who-dares-cares-scio-4.jpg"></center>
+		<div class="container">
+	<header>
+   			<img src="logo_site.png">
+	</header>
 		<center><h2>Profile</h2></center>
 		<!-- form for profile creation-->
 		<form action="" method="POST">
 			<center><table>
   			<tr>
-    			<td><input id="name" type="email" name="name" value="" size="40" maxlength="60" placeholder="Full Name"/>
+    			<td><input class="textbox" id="name" type="email" name="name" value="" size="40" maxlength="60" placeholder="Full Name"/>
 				</td>
   			</tr>
   			<tr>
-    			<td><input id="age" type="text" name="age" value="" size="40" maxlength="40" placeholder="Age"/>
+    			<td><input class="textbox" id="age" type="text" name="age" value="" size="40" maxlength="40" placeholder="Age"/>
 				</td>
   			</tr>	
   			<tr>
@@ -57,7 +60,7 @@
 				</td>
 			</tr>
 			</table></center>
-			<br><center><button href="login.html" type = "button">Back</button><button type="submit">Submit</button></center>
+			<br><center><button id="button2" href="login.html" type = "button">Back</button><button id="button2" type="submit">Submit</button></center>
 		</form>
 	</body>
 </html>
