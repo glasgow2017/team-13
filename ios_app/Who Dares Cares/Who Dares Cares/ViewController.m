@@ -13,7 +13,7 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *mainPage = @"http://127.0.0.1:8000/";
+    NSString *mainPage = @"http://localhost:8000/";
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     WKWebView *webView = [[WKWebView alloc] initWithFrame:self.outerView.frame configuration:config];
