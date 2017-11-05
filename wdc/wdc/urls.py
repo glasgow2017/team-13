@@ -22,11 +22,9 @@ from wdc_main import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^login/$', LoginView.as_view(template_name="login.html"), name="login"),
     url(r'^logout/$', LogoutView.as_view(), name="logout"),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^profile/$', views.profile, name="profile"),
-    url(r'^home/$', views.home, name="home"),
-    url(r'^$', views.index, name="index"),
-    url(r'^responder_page', views.responder_page, name="responder_page")
+    url(r'^responder_page', views.responder_page, name="responder_page"),
+    url(r'^$', LoginView.as_view(template_name="login.html"), name="login"),
 ]

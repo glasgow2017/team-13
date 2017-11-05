@@ -1,64 +1,70 @@
- * margin {
-
+body {
+    font-family: "Arial", serif;
 }
-			body{
-				font-family:"Arial";
-			}
-			/*header*/
-			div.container {
-    		width: 100%;
-    		max-height: 100%;
-			}
-			header, footer {
-    		background-color: #0f2b33;
-    		clear: left;
-    		text-align: center;
-			}
-			/*button style*/
-			#button {
-			background-color: #0f2b33;
-			border: none;
-			color: white;
-			padding: 6px 10px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 24px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 5px;
-			}
-			#button2 {
-			background-color: white;
-			border: solid #0f2b33;
-			color: #0f2b33 ;
-			padding: 6px 10px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 24px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 5px;
-			}
-			.textbox {
-			border: 2px solid #0f2b33;
-			background-color:#0f2b33;
-			color: white; 
-			height: 24px;
-  			border-radius: 5px;
-  			}
-  			::-webkit-input-placeholder { /* Chrome */
-  			color: white;
-  			}
-			::-ms-input-placeholder { /* IE 10+ */
-  			color: white;
-			}
-			::-moz-placeholder { /* Firefox 19+ */
-			color: white;
-  			opacity: 1;
-			}
-			:-moz-placeholder { /* Firefox 4 - 18 */
-  			color: white;
-  			opacity: 1;
-			}	
+
+/*header*/
+div.container {
+    width: 100%;
+    max-height: 100%;
+}
+
+header, footer {
+    background-color: #0f2b33;
+    clear: left;
+    text-align: center;
+}
+
+/*button style*/
+#button {
+    background-color: #0f2b33;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#button2 {
+    background-color: white;
+    border: solid #0f2b33;
+    color: #0f2b33;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.textbox {
+    border: 2px solid #0f2b33;
+    background-color: #0f2b33;
+    color: white;
+    height: 24px;
+    border-radius: 5px;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+    color: white;
+}
+
+::-ms-input-placeholder { /* IE 10+ */
+    color: white;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: white;
+    opacity: 1;
+}
+
+:-moz-placeholder { /* Firefox 4 - 18 */
+    color: white;
+    opacity: 1;
+}

@@ -4,10 +4,6 @@ from .forms import ProfileForm
 from .models import UserProfile, Request
 
 
-def index(request):
-    return render(request, "index.html", {"welcome": "hello"})
-
-
 def profile(request):
     if request.user.is_authenticated():
         try:
@@ -42,6 +38,3 @@ def responder_page(request):
     priority_user = get_most_urgent_request()
     return HttpResponse(priority_user, )
 
-
-def home(request):
-    return render(request, "home.html", {})
