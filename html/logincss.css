@@ -1,10 +1,27 @@
 * { margin: 0; 
 	padding: 0; /*to avoid a gap in Firefox*/ }  
-body { background-color: white /*url("pictures/wallpaper.png")*/ ;
+body { background-color: #C1D3D8;
 		background-attachment: fixed;
 		padding: 0px; 
 		text-align: center; /* First step to make the content centred in IE */
 		font-family: 'Century Gothic';
-		color: white;
+		font-color: white;
 		font-size: 11pt;
 		}  
+#list li {
+	display: inline;
+	margin: 10px;
+	text-align: center;
+   }
+
+#list a {
+	text-decoration: none;
+	color: green;
+}
+
+#list {
+	background-color: black;
+	width:  300px;
+	height: 25px;
+	border-radius: 5px;
+}
