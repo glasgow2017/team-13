@@ -1,6 +1,8 @@
 import math
 
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils import timezone
 from django.contrib.auth.models import User
 
@@ -59,12 +61,12 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     role = models.IntegerField(choices=ROLE_CHOICES, default=USER_CHOICE)
     name = models.CharField(max_length=255)
-    telephone = models.CharField(max_length=20, blank=False)
-    region = models.IntegerField(choices=REGION_CHOICES, blank=False)
+    telephone = models.CharField(max_length=20, blank=True, null=True)
+    region = models.IntegerField(choices=REGION_CHOICES, blank=True, null=True)
     comments = models.CharField(max_length=1000, blank=True, null=True)
-    dob = models.DateField(blank=False)
-    gender = models.IntegerField(choices=GENDER_CHOICES, blank=False)
-    background = models.IntegerField(choices=BACKGROUND_CHOICES, blank=False)
+    age = models.IntegerField(blank=True, null=True)
+    gender = models.IntegerField(choices=GENDER_CHOICES, blank=True, null=True)
+    background = models.IntegerField(choices=BACKGROUND_CHOICES, blank=True, null=True)
     previous_issues = models.BooleanField(default=False)
     blocked = models.BooleanField(default=False)
     registered_on = models.DateTimeField(auto_now_add=timezone.now)

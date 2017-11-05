@@ -1,0 +1,11 @@
+{% if user.is_authenticated %}
+    Hello, please fill this form:
+
+    <form method="post" action="/accounts/profile/">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="Submit" value="Update profile">
+    </form>
+{% else %}
+    Register or log in first
+{% endif %}
