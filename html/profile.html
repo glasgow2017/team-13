@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Profile</title>
+		<!-- link rel="stylesheet" media="screen" href="styles.css"> -->
+	</head>
+	<body>
+		<center><img src="https://www.totalgiving.co.uk/dm-images/charity-logos/large/who-dares-cares-scio-4.jpg"></center>
+		<center><h2>Profile</h2></center>
+		<!-- form for profile creation-->
+		<form action="" method="POST">
+			<center><table>
+  			<tr>
+    			<td><input id="name" type="email" name="name" value="" size="40" maxlength="60" placeholder="Full Name"/>
+				</td>
+  			</tr>
+  			<tr>
+    			<td><input id="age" type="text" name="age" value="" size="40" maxlength="40" placeholder="Age"/>
+				</td>
+  			</tr>	
+  			<tr>
+    			<td><select id=gender name="gender">
+						<option disabled selected value>Gender</option>
+						<option value="female">Female</option>
+						<option value="male">Male</option>
+						<option value="notSpecified">Prefer not to say</option>
+					</select>
+			    </td>
+			</tr>
+			<tr>
+    			<td><select id="region" name="region">
+						<option disabled selected value>Region</option>
+						<option value="england">England</option>
+						<option value="northernIreland">Northern Ireland</option>
+						<option value="scotland">Scotland</option>
+						<option value="wales">Wales</option></option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+    			<td><select id="background" name="background">
+						<option disabled selected value>Background</option>
+						<option value="fireService">Fire Service</option>
+						<option value="military">Military</option>
+						<option value="nhs">NHS</option>
+					    <option value="police">Police Force</option>
+						<option value="prisonStaff">Prison Staff</option>
+						<option value="otherBackground">Other</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><p1>Have you ever been diagnosed with a mental health issue?</p1><br>
+					<input type="radio" name="yes" value="yes" checked>Yes<br>
+					<input type="radio" name="no" value="no" checked>No<br>
+				</td>
+			</tr>
+			</table></center>
+			<br><center><button href="login.html" type = "button">Back</button><button type="submit">Submit</button></center>
+		</form>
+	</body>
+</html>

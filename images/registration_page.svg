@@ -21,7 +21,6 @@
   <defs
      id="defs4">
     <linearGradient
-       inkscape:collect="always"
        id="linearGradient4480"
        osb:paint="gradient">
       <stop
@@ -96,8 +95,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="-113.45936"
-     inkscape:cy="316.4654"
+     inkscape:cx="427.23266"
+     inkscape:cy="502.18144"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -152,20 +151,20 @@
        id="rect6508"
        width="579.19464"
        height="80.488358"
-       x="85.169273"
-       y="440.37842"
+       x="89.209885"
+       y="341.38345"
        ry="19.285715" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Footlight MT Light';-inkscape-font-specification:'Footlight MT Light, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#204044;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="104.46658"
-       y="490.1431"
+       x="108.50719"
+       y="391.14813"
        id="text6581"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6583"
-         x="104.46658"
-         y="490.1431"
+         x="108.50719"
+         y="391.14813"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke:#204044;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">Email</tspan></text>
     <text
        xml:space="preserve"
@@ -184,52 +183,72 @@
        id="rect6508-7"
        width="579.19464"
        height="80.488358"
-       x="85.169273"
-       y="586.96252"
+       x="89.209885"
+       y="482.12915"
        ry="19.285715" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Footlight MT Light';-inkscape-font-specification:'Footlight MT Light, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#204044;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="104.5447"
-       y="636.72717"
+       x="108.58531"
+       y="536.45538"
        id="text6581-4"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6583-0"
-         x="104.5447"
-         y="636.72717"
+         x="108.58531"
+         y="536.45538"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke:#204044;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">Password</tspan></text>
     <rect
        style="opacity:1;fill:#dceef2;fill-opacity:1;stroke:#263336;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect6508-0"
        width="579.19464"
        height="80.488358"
-       x="85.169273"
-       y="733.54663"
+       x="89.209885"
+       y="622.87482"
        ry="19.285715" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Footlight MT Light';-inkscape-font-specification:'Footlight MT Light, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#204044;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="104.5447"
-       y="783.31128"
+       x="108.52672"
+       y="673.46082"
        id="text6581-7"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan6583-6"
-         x="104.5447"
-         y="783.31128"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke:#204044;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">Phone</tspan></text>
+         x="108.52672"
+         y="673.46082"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke:#204044;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">Confirm Password</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#0f2b33;stroke-width:6.40953016;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 188.68353,948.28975 c 7.90932,13.4274 -0.18394,26.5933 -0.18394,26.5933 -1.7474,0.9197 -55.23348,0 -55.23348,0 0,0 18.41356,17.6779 22.27625,23.5639 0,0 2.80463,13.88775 -15.4052,16.69275 -1.20788,0.5349 -41.430673,-38.35115 -52.590953,-49.95245 -3.06674,-3.1879 -0.32259,-7.2124 -0.32259,-7.2124 6.11855,-8.9445 52.153443,-51.5209 53.326043,-51.245 13.02351,1.2897 14.3425,10.9475 15.08738,15.0873 -0.78039,2.016 -22.68876,25.6318 -22.68876,25.6318 0,0 54.9995,-0.1709 55.73525,0.8408 z"
+       d="m 193.7343,948.28975 c 7.90932,13.4274 -0.18394,26.5933 -0.18394,26.5933 -1.7474,0.9197 -55.23348,0 -55.23348,0 0,0 18.41356,17.6779 22.27625,23.5639 0,0 2.80463,13.88775 -15.4052,16.69275 -1.20788,0.5349 -41.43068,-38.35115 -52.590957,-49.95245 -3.06674,-3.1879 -0.32259,-7.2124 -0.32259,-7.2124 6.11855,-8.9445 52.153447,-51.5209 53.326047,-51.245 13.02351,1.2897 14.3425,10.9475 15.08738,15.0873 -0.78039,2.016 -22.68876,25.6318 -22.68876,25.6318 0,0 54.9995,-0.1709 55.73525,0.8408 z"
        id="path4173"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccsccccc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#0f2b33;stroke-width:6.40953016;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 560.84967,948.28977 c -7.90932,13.4275 0.18394,26.5934 0.18394,26.5934 1.7474,0.9197 55.23347,0 55.23347,0 0,0 -18.41356,17.6779 -22.27625,23.5639 0,0 -2.80463,13.88773 15.4052,16.69263 1.20788,0.5349 41.43067,-38.35103 52.59095,-49.95233 3.06674,-3.1879 0.32259,-7.2124 0.32259,-7.2124 -6.11855,-8.9445 -52.15344,-51.521 -53.32604,-51.2451 -13.02351,1.2897 -14.3425,10.9475 -15.08738,15.0873 0.78039,2.016 22.68876,25.6318 22.68876,25.6318 0,0 -54.99949,-0.1709 -55.73524,0.8408 z"
+       d="m 565.90044,948.28977 c -7.90932,13.4275 0.18394,26.5934 0.18394,26.5934 1.7474,0.9197 55.23347,0 55.23347,0 0,0 -18.41356,17.6779 -22.27625,23.5639 0,0 -2.80463,13.88773 15.4052,16.69263 1.20788,0.5349 41.43067,-38.35103 52.59095,-49.95233 3.06674,-3.1879 0.32259,-7.2124 0.32259,-7.2124 -6.11855,-8.9445 -52.15344,-51.521 -53.32604,-51.2451 -13.02351,1.2897 -14.3425,10.9475 -15.08738,15.0873 0.78039,2.016 22.68876,25.6318 22.68876,25.6318 0,0 -54.99949,-0.1709 -55.73524,0.8408 z"
        id="path4173-7"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccsccccc" />
+    <rect
+       style="opacity:1;fill:#dceef2;fill-opacity:1;stroke:#263336;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6508-0-5"
+       width="579.19464"
+       height="80.488358"
+       x="90.220039"
+       y="763.62054"
+       ry="19.285715" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Footlight MT Light';-inkscape-font-specification:'Footlight MT Light, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#204044;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="109.59547"
+       y="817.94678"
+       id="text6581-7-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6583-6-0"
+         x="109.59547"
+         y="817.94678"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke:#204044;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">Phone</tspan></text>
   </g>
 </svg>
