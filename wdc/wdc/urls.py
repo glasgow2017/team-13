@@ -16,11 +16,14 @@ Including another URLconf
 
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.auth.views import LoginView
+
 from wdc_main import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('^', include('django.contrib.auth.urls')),
+    #url('^', include('django.contrib.auth.urls')),
+    url(r'^login/$', LoginView.as_view(template_name="login.html"), name="login"),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/profile/$', views.profile, name="profile"),
     url(r'^$', views.index, name="index"),

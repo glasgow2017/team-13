@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta %}
+    <link rel="stylesheet" type="text/css" href="{% static "sheet1.css" %}">
+{% endblock %}
+
+{% block content %}
+    <header class="row">
+        <div class="col-12">
+            <img src="{% static "logo_site.png" %}" class="img img-fluid">
+        </div>
+    </header>
+    <!--<center><img src="https://www.totalgiving.co.uk/dm-images/charity-logos/large/who-dares-cares-scio-4.jpg"></center>-->
+    <!-- start form for login -->
+    <br><br>
+
+    {% if user.is_authenticated %}
+        Welcome {{ user.username }}
+    {% else %}
+        <div class="row">
+            {% if form.errors %}
+                <p class="alert alert-danger">Your username and password didn't match. Please try again.</p>
+            {% endif %}
+
+            <form action="{% url "login" %}" method="POST" class="col-6 offset-3">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="{{ form.username.id_for_label }}"
+                           class="col-sm-2 col-form-label">{{ form.username.label }}</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="{{ form.username.id_for_label }}"
+                               placeholder="email@example.com">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="{{ form.password.id_for_label }}"
+                           class="col-sm-2 col-form-label">{{ form.password.label }}</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="{{ form.password.id_for_label }}"
+                               placeholder="Password">
+                    </div>
+                </div>
+                <br>
+                <center>
+                    <button id="button" class="btn btn-primary" type="submit">Log In</button>
+                </center>
+            </form>
+        </div>
+        <!-- end of user ID login fields -->
+        <center><p>Don't have an account? Register <a href="/accounts/register">here</a></p></center>
+    {% endif %}
+    <br><br>
+    <center>
+        <a id="button2" type="button" href="tel:07780666056"><i class="fa fa-phone">&nbsp;&nbsp;</i><b>EMERGENCY
+            HELP</b></a>
+    </center>
+{% endblock %}
+{% block footer %}{% endblock %}
