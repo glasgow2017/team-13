@@ -16,7 +16,6 @@ def create_users():
     admin.is_staff = True
     admin.save()
 
-
 if __name__ == '__main__':
     print("Creating users...")
     create_users()

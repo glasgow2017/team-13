@@ -58,6 +58,7 @@ class UserProfile(models.Model):
         (OTHER_CHOICE, "Other Background")
     )
 
+    username = models.CharField(max_length=10, default='usr')
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     role = models.IntegerField(choices=ROLE_CHOICES, default=USER_CHOICE)
     name = models.CharField(max_length=255)
