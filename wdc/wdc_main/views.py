@@ -30,7 +30,6 @@ def profile(request):
     return render(request, "profile.html", {})
 
 
-<<<<<<< Updated upstream
 def get_most_urgent_request():
     priority_list = Request.objects.filter(is_taken=False).order_by('-weight')
     if priority_list:
@@ -43,7 +42,6 @@ def responder_page(request):
     priority_user = get_most_urgent_request()
     return HttpResponse(priority_user, )
 
-=======
+
 def home(request):
     return render(request, "home.html", {})
->>>>>>> Stashed changes
